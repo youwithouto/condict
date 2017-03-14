@@ -1,0 +1,23 @@
+{
+    'basic': {
+        'explains': [
+                        'n. 表示问候， 惊奇或唤起注意时的用语',
+                        'int. 喂；哈罗',
+                        'n. (Hello)人名；(法)埃洛'
+                    ],
+        'phonetic': "hə'ləʊ; he-",
+        'uk-phonetic': "hə'ləʊ; he-",
+        'us-phonetic': 'hɛˈlo, hə-'
+    },
+    'errorCode': 0,
+    'query': 'hello',
+    'translation': ['你好'],
+    'web': [
+        {'key': 'Hello', 'value': ['你好', '您好', 'Hello']},
+        {'key': 'Hello Kitty', 'value': ['凯蒂猫', '昵称', '匿称']},
+        {'key': 'Hello Bebe', 'value': ['哈乐哈乐', '乐扣乐扣']}
+    ]
+}
+
+
+
