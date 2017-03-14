@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """Usage: 
@@ -12,7 +12,10 @@ Options:
   --raw            Print the raw response.
   --more		   Do more search for the word.
 """
-import pprint
+# http://python-future.org/compatible_idioms.html
+from __future__ import print_function
+
+import json
 
 from docopt import docopt
 import requests
@@ -36,7 +39,8 @@ class bcolors:
 
 
 def raw(response):
-	pprint.pprint(response)
+	# http://stackoverflow.com/a/11759156/7699087
+	print(json.dumps(response, indent=4, sort_keys=True, ensure_ascii=False))
 
 
 def pretty(response):
@@ -69,12 +73,12 @@ def error(response):
 def condict(word, print_raw=False, more=False):
 	url = URL.format(word)
 	r = requests.get(url)
-	json = eval(r.text)
+	json_str = json.loads(r.text)
 
 	if print_raw:
-		raw(json)
+		raw(json_str)
 	else:
-		pretty(json)
+		pretty(json_str)
 
 
 def main():
